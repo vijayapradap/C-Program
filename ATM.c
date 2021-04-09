@@ -8,7 +8,7 @@ int main( void ) {
 	int balAmount = 50000, amount;
 	
 	HOME:
-	printf("\tWelcome to Bank of VIJAY\n\n\t   Welcome Vijayapradap M\n\nEnter your PIN : ");
+	printf("\tWelcome to Bank of VIJAY\n\n\t Welcome Vijayapradap M\n\nEnter your PIN : ");
 	scanf("%4d",&pinNumber);
 	
 	if( pinNumber == storedPinNumber ) {
