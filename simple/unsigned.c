@@ -8,23 +8,26 @@ Code, Compile, Run and Debug online from anywhere in world.
 *******************************************************************************/
 #include <stdio.h>
 
-int reverse_num(int val)
-{
-    int rem = 0, rev = 0;
-    
-    while(val != 0) {
-        rem = val % 10;
-        rev = rev * 10 + rem;
-        val = val / 10;
+void demo(void){
+    unsigned int x = 10 ;
+    int y = -40;
+    unsigned int z= x+y;
+    if(z > 10) {
+        printf("Greater than 10");
+    } else {
+        printf("Less than or equals 10");
     }
-    return rev;
 }
 
 int main()
 {
-    int value = 43456;
-    printf("value before reverse : %d\n", value);
-    printf("value after reverse : %d\n", reverse_num(value));
+    demo();
+    
+    int num1=20, num2=30;
+    num1^=num2^=num1^=num2;
+    printf("\nnum1 : %d and num2 : %d\n", num1, num2);
+
+    unsigned b;
 
     return 0;
 }

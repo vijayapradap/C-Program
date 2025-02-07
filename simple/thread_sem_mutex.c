@@ -7,24 +7,23 @@ Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
 #include <stdio.h>
+#include <pthread.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <semaphore.h>
 
-int reverse_num(int val)
+void fun(int **p)
 {
-    int rem = 0, rev = 0;
-    
-    while(val != 0) {
-        rem = val % 10;
-        rev = rev * 10 + rem;
-        val = val / 10;
-    }
-    return rev;
-}
-
+ static int q = 10;
+ *p = &q;
+} 
+  
 int main()
 {
-    int value = 43456;
-    printf("value before reverse : %d\n", value);
-    printf("value after reverse : %d\n", reverse_num(value));
-
-    return 0;
+ int r = 20;
+ int *p = &r;
+ fun(&p);
+ printf("%d", *p);
+ getchar();
+ return 0;
 }

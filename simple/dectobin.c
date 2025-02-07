@@ -8,23 +8,17 @@ Code, Compile, Run and Debug online from anywhere in world.
 *******************************************************************************/
 #include <stdio.h>
 
-int reverse_num(int val)
-{
-    int rem = 0, rev = 0;
-    
-    while(val != 0) {
-        rem = val % 10;
-        rev = rev * 10 + rem;
-        val = val / 10;
-    }
-    return rev;
-}
-
 int main()
 {
-    int value = 43456;
-    printf("value before reverse : %d\n", value);
-    printf("value after reverse : %d\n", reverse_num(value));
+    int x = 0x23;
+    
+    for(int i=7; i>=0; i--) {
+        if (x & (1 << i)) {
+            printf("1");
+        } else {
+            printf("0");
+        }
+    }
 
     return 0;
 }
