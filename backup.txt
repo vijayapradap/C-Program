@@ -1,0 +1,96 @@
+
+https://mu.microchip.com/c-programming-callbacks
+
+
+https://mu.microchip.com/advanced-c-programming/784729
+
+
+iotedge list | grep 'CookingService' | awk '{print $1}'
+
+
+/var/lib/docker/containers
+
+
+sudo docker exec -it ca4ec361be29 bash
+
+
+^[[32mINFO^[[0m
+ 
+ 
+sudo docker rm $(docker container ps -q) -f
+
+
+uvccapture -q85 -x1920 -y1080 -B20 -C5 -ooutput.jpg
+
+
+fswebcam -r 3840x3104 --jpeg 85 -D 1 web-cam-shot.jpg
+
+
+fswebcam -r 3840x3104 --fps 15 -F 3 --jpeg 85 --no-timestamp web-cam-shot.jpg
+ 
+ 
+sudo netstat -tulpn
+
+
+
+Dockerfile.arm64v8:
+# Use an official Ubuntu base image
+FROM ubuntu:20.04
+ 
+# Install necessary packages
+RUN apt-get update && apt-get install -y \
+    x11-apps \
+    dbus-x11 \
+&& rm -rf /var/lib/apt/lists/*
+ 
+# Set environment variables for display access
+ENV DISPLAY=:0
+ 
+# Set the entrypoint to a shell
+ENTRYPOINT ["/bin/bash"]
+ 
+Docker Build:
+docker build  --rm -f "/home/Onanouser/vijay/Dockerfile.arm64v8" -t flutter_test_0.0.1-arm64v8 "/home/Onanouser/vijay"
+ 
+Docker Run:
+docker run -it     --device=/dev/dri:/dev/dri     -e DISPLAY=":0"     -v /tmp/.X11-unix:/tmp/.X11-unix     -v /run/user/1000/at-spi/bus_0:/run/user/1000/at-spi/bus_0     docker.io/library/flutter_test_0.0.1-arm64v8
+
+
+
+/usr/bin/gst-launch-1.0 v4l2src device=/dev/video0 ! video/x-raw,format=YUY2,width=1920,height=1080,framerate=5/1 ! videoconvert ! videoflip method=clockwise ! videoscale ! video/x-raw,aspect-ratio=4/3 ! tee name=t ! queue ! v4l2sink device=/dev/video2 sync=false t. ! queue ! v4l2sink device=/dev/video3 sync=false t. ! queue ! v4l2sink device=/dev/video4 sync=false t. ! queue ! v4l2sink device=/dev/video5 sync=false
+ 
+ 
+v4l2-ctl --list-formats-ext -d /dev/video0
+
+
+
+#!/bin/bash 
+ 
+# Run the GStreamer pipeline 
+/usr/bin/gst-launch-1.0 v4l2src device=/dev/video0 ! \ 
+  video/x-raw,format=YUY2,width=1920,height=1080,framerate=5/1 ! \ 
+  videoconvert ! videoflip method=clockwise ! videoscale ! \ 
+  video/x-raw,aspect-ratio=4/3 ! tee name=t ! \ 
+  queue ! v4l2sink device=/dev/video2 sync=false t. ! \ 
+  queue ! v4l2sink device=/dev/video3 sync=false t. ! \ 
+  queue ! v4l2sink device=/dev/video4 sync=false t. ! \ 
+  queue ! v4l2sink device=/dev/video5 sync=false & 
+ 
+# Wait for 2 seconds 
+sleep 2 
+ 
+# Load the v4l2loopback module with 5 devices 
+sudo modprobe v4l2loopback devices=5 
+ 
+echo "GStreamer pipeline is running and v4l2loopback module is loaded." 
+
+
+
+
+docker run -i -t ceb61a2c1ee5 /bin/bash
+
+
+sudo docker build  --rm -f "/home/Onanouser/vijay/ftt-em-foreground-service/SmartOvenForegroundServices/modules/ForegroundServices/Dockerfile.arm64v8" -t acrembeddedfttdeveastus2001.azurecr.io/foregroundservices:test_1.0.4-arm64v8 "/home/Onanouser/vijay/ftt-em-foreground-service/SmartOvenForegroundServices/modules/ForegroundServices/" --progress=plain --no-cache
+
+
+docker export -o <output_file>.tar <container_id>
