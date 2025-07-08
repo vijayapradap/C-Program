@@ -202,4 +202,5 @@ ENTRYPOINT ["/bin/bash"]
 - [Microchip C Programming Callbacks](https://mu.microchip.com/c-programming-callbacks)
 - [Advanced C Programming](https://mu.microchip.com/advanced-c-programming/784729)
 - [myWiki](https://github.com/vijayapradap/Git_Workspace/wiki)
+- [Chessman](https://mohitmishra786.github.io/chessman/)
 ```
